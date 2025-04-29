@@ -1,0 +1,83 @@
+<script src="path/to/chartjs/dist/chart.umd.js"></script>
+
+<div class="container">
+  <div class="header-controls">
+    <button (click)="abrirModal()">Lançamentos</button>
+    <div class="year-filter">
+      <label for="yearSelect">Ano:</label>
+      <select id="yearSelect" [(ngModel)]="anoAtual" (change)="aoMudarAno()">
+        <option *ngFor="let ano of [2024, 2023, 2022]" [value]="ano">{{ano}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-container">
+      <canvas id="lineChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="pieChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Mês/Ano</th>
+        <th>Toneladas Processadas (Ton)</th>
+        <th>Energia Gerada (KW)</th>
+        <th>Imposto Abatido (R$)</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mes of meses; let i = index">
+        <td>{{ mes }}/{{ anoAtual }}</td>
+        <td>{{ dadosPorAno[anoAtual].toneladas[i] || 0 }}</td>
+        <td>{{ dadosPorAno[anoAtual].energia[i] || 0 }}</td>
+        <td>{{ dadosPorAno[anoAtual].imposto[i] || 0 }}</td>
+        <td>
+          <button class="edit" (click)="editarLinha(i)">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="myModal" class="modal" *ngIf="isModalOpen">
+    <div class="modal-content">
+      <span class="close" (click)="fecharModal()">&times;</span>
+      <h2>Novo Lançamento</h2>
+      <form [formGroup]="dataForm" (ngSubmit)="aoEnviar()">
+
+        <div class="form-group">
+          <label for="ano">Ano:</label>
+          <select formControlName="ano">
+            <option *ngFor="let ano of [2024, 2023, 2022]" [value]="ano">{{ ano }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mes">Mês:</label>
+          <select formControlName="mes">
+            <option *ngFor="let mes of meses; let index = index" [value]="index">{{ mes }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="toneladas">Toneladas Processadas (Ton):</label>
+          <input type="number" formControlName="toneladas" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="energia">Energia Gerada (KW):</label>
+          <input type="number" formControlName="energia" step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="imposto">Imposto Abatido (R$):</label>
+          <input type="number" formControlName="imposto" step="0.01" required>
+        </div>
+        <button type="submit">Adicionar Dados</button>
+      </form>
+    </div>
+  </div>
+</div>

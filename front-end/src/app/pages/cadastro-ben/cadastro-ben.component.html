@@ -1,0 +1,74 @@
+
+<!--<div class="container">
+
+  <div class="form-section">
+    <h1 class="h1-gr">Cadastro de Beneficiário</h1>
+    <br>
+
+  <form id="cadastroForm" onsubmit="return validateForm(event)">
+    <div class="form-group">
+        <label for="nis">Número do NIS (PIS/PASEP)</label>
+        <input type="text" id="nis" maxlength="14" placeholder="Digite o número do NIS">
+        <span class="error">NIS inválido</span>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite o seu email">
+    </div>
+
+    <button type="submit" class="btn-primary">Cadastrar</button>
+  </form>
+  </div>
+  <div class="image-section">
+    Placeholder para imagem
+    <img src="https://images.unsplash.com/photo-1478061653917-455ba7f4a541?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D alt=">
+  </div>
+
+
+</div>-->
+
+<!-- cadastro-ben.component.html -->
+
+<div class="container">
+  <div class="form-section">
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nis">NIS</label>
+        <input
+          id="nis"
+          type="text"
+          formControlName="nis"
+          [class.is-invalid]="nisInvalido">
+        <div class="invalid-feedback" *ngIf="nisInvalido">
+          NIS inválido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.is-invalid]="emailInvalido">
+        <div class="invalid-feedback" *ngIf="emailInvalido">
+          {{ emailErrorMessage }}
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <div class="image-section">
+    <!-- Placeholder para imagem -->
+    <img src="https://images.unsplash.com/photo-1473594659356-a404044aa2c2?q=80&w=1772&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+  </div>
+
+
+</div>
+
+
+
+

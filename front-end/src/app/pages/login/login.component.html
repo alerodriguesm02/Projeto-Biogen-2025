@@ -1,0 +1,75 @@
+
+<!--<div class="container">
+
+  <div class="form-section">
+    <h1 class="h1-gr">Login</h1>
+    <br>
+
+  <form id="cadastroForm" onsubmit="return validateForm(event)">
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite o seu email">
+    </div>
+
+    <div class="form-group">
+      <label for="Senha">Senha</label>
+      <input type="password" id="Senha" maxlength="6" placeholder="Digite a senha">
+      <span class="error">Email ou senha inválido</span>
+  </div>
+
+    <button type="submit" class="btn-primary" href="/src/app/pages/usuario/usuario.component.html">Login</button>
+  </form>
+  </div>
+  <div class="image-section">
+    Placeholder para imagem
+    <img src="https://cdn.pixabay.com/photo/2015/08/27/11/08/biomass-heating-power-plant-910240_1280.jpg">
+  </div> -->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">-->
+  <div class="container">
+    <div class="form-section">
+        <h2>Login</h2>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    [class.is-invalid]="emailControl?.invalid && emailControl?.touched"
+                    placeholder="Digite seu email">
+                <div class="invalid-feedback" *ngIf="emailControl?.invalid && emailControl?.touched">
+                    {{ emailErrorMessage }}
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="password-input">
+                    <input
+                        id="password"
+                        [type]="showPassword ? 'text' : 'password'"
+                        formControlName="password"
+                        [class.is-invalid]="passwordControl?.invalid && passwordControl?.touched"
+                        placeholder="Digite sua senha">
+                    <button type="button" class="toggle-password" (click)="togglePasswordVisibility()" aria-label="Mostrar/ocultar senha">
+                        <i class="fa fa eye" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+                    </button>
+                </div>
+                <div class="error-message" *ngIf="passwordControl?.invalid && passwordControl?.touched">
+                    {{ passwordErrorMessage }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="loading">
+                <span *ngIf="!loading">Entrar</span>
+                <span *ngIf="loading" class="spinner"></span>
+            </button>
+        </form>
+    </div>
+
+    <div class="image-section">
+      <img src="https://cdn.pixabay.com/photo/2015/08/27/11/08/biomass-heating-power-plant-910240_1280.jpg" alt="imagem-de-fundo">
+    </div>
+</div>

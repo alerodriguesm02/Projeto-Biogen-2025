@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="form-section">
+
+    <h1 class="h1-gr">Cadastro de Fornecedor</h1>
+
+      <h5><a href="cadastro-ben" class="light-green-link">Sou beneficiário e quero me cadastrar!</a></h5>
+      <br>
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="cnpj">CNPJ</label>
+        <input
+          id="cnpj"
+          type="text"
+          formControlName="cnpj"
+          [class.is-invalid]="cnpjInvalido">
+        <div class="invalid-feedback" *ngIf="cnpjInvalido">
+          CNPJ inválido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="razaoSocial">Razão Social</label>
+        <input
+          id="razaoSocial"
+          type="text"
+          formControlName="razaoSocial"
+          [class.is-invalid]="razaoSocialInvalida">
+        <div class="invalid-feedback" *ngIf="razaoSocialInvalida">
+          Razão Social é obrigatória
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input
+          id="cep"
+          type="text"
+          formControlName="cep"
+          (blur) = "buscaCEP()"
+          [class.is-invalid]="cepInvalido">
+        <div class="invalid-feedback" *ngIf="cepInvalido">
+          CEP inválido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="endereco">Endereço</label>
+        <input
+          id="endereco"
+          type="text"
+          formControlName="endereco"
+          [class.is-invalid]="enderecoInvalido">
+        <div class="invalid-feedback" *ngIf="enderecoInvalido">
+          Endereço é obrigatório
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input
+          id="numero"
+          type="text"
+          formControlName="numero"
+          [class.is-invalid]="numeroInvalido">
+        <div class="invalid-feedback" *ngIf="numeroInvalido">
+          Número é obrigatório
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.is-invalid]="emailInvalido">
+        <div class="invalid-feedback" *ngIf="emailInvalido">
+          Email inválido
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          type="password"
+          formControlName="senha"
+          [class.is-invalid]="senhaInvalida">
+        <div class="invalid-feedback" *ngIf="senhaInvalida">
+          Senha deve ter no mínimo 6 caracteres
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
+    </form>
+  </div>
+  <div class="image-section">
+    <!-- Placeholder para imagem -->
+    <img src="https://images.unsplash.com/photo-1651525670054-279c154bc3b6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+  </div>
+
+</div>
+
