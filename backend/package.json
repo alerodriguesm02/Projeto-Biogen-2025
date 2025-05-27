@@ -1,0 +1,31 @@
+{
+  "name": "biogen-backend",
+  "version": "1.0.0",
+  "description": "Backend para o sistema Biogen - Energia Limpa",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "init-db": "node src/config/initDatabase.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^11.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.9.0",
+    "jsonwebtoken": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "biogen",
+    "energia",
+    "backend",
+    "api"
+  ],
+  "author": "Biogen Team",
+  "license": "MIT"
+}

@@ -1,0 +1,57 @@
+<header class="header-responsive">
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a routerLink="home" routerLinkActive="active">
+        <img src="assets/logo-biogen.png" alt="Logotipo Biogen" class="logo-nav"/>
+      </a>
+    </div>
+    
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="home" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="sobre" routerLinkActive="active" class="nav-link">Quem Somos</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="solucao" routerLinkActive="active" class="nav-link">Solução</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="parceiros" routerLinkActive="active" class="nav-link">Parceiros</a>
+        </li>
+        <li class="nav-item" *ngIf="isAuthenticated">
+          <a routerLink="dashboard" routerLinkActive="active" class="nav-link">Dashboard</a>
+        </li>
+      </ul>
+      
+      <div class="nav-actions">
+        <ng-container *ngIf="!isAuthenticated">
+          <a routerLink="cadastro" routerLinkActive="active" class="btn-primary nav-btn-cta">
+            Cadastre-se
+          </a>
+          <a routerLink="login" routerLinkActive="active" class="nav-user-icon">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </ng-container>
+        
+        <ng-container *ngIf="isAuthenticated">
+          <div class="user-info">
+            <span class="user-name">{{ currentUser?.email }}</span>
+            <span class="user-role">({{ currentUser?.role }})</span>
+          </div>
+          <button (click)="logout()" class="btn-logout">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Sair
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </nav>
+</header>

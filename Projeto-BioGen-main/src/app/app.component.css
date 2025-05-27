@@ -1,0 +1,102 @@
+.reader-container {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #016c62;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reader-header {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+.reader-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.reader-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+}
+
+.reader-button:hover {
+  background-color: #0056b3;
+}
+
+/* ====== RESPONSIVIDADE DO LEITOR ====== */
+@media (max-width: 768px) {
+  .reader-container {
+    width: 120px;
+    padding: 8px;
+    top: 8px;
+    left: 8px;
+  }
+  
+  .reader-header {
+    font-size: 14px;
+  }
+  
+  .reader-button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reader-container {
+    width: 100px;
+    padding: 6px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .reader-header {
+    font-size: 12px;
+  }
+  
+  .reader-button {
+    padding: 3px 6px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .reader-container {
+    width: 80px;
+    padding: 4px;
+  }
+  
+  .reader-header {
+    font-size: 10px;
+  }
+  
+  .reader-button {
+    padding: 2px 4px;
+    font-size: 9px;
+  }
+}
+
+
+
+
+

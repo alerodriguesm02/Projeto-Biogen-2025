@@ -1,0 +1,16 @@
+<div class="reader-container">
+  <div class="reader-header" (click)="toggleReaderMenu()">Leitura</div>
+  <div class="reader-buttons" *ngIf="isReaderMenuOpen">
+    <button class="reader-button" (click)="readText()">Ler tudo</button>
+    <button class="reader-button" (click)="readSelectedText()">Ler seleção</button>
+    <button class="reader-button" (click)="pauseReading()">Pausar</button>
+    <button class="reader-button" (click)="resumeReading()">Retomar</button>
+    <button class="reader-button" (click)="stopReading()">Parar</button>
+  </div>
+</div>
+
+
+
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
