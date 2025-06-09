@@ -1,7 +1,7 @@
 # 🌱 BioGen - Energia Limpa e Sustentável
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/biogen-team/assets/main/logo-biogen.png" alt="BioGen Logo" width="200"/>
+  <img src="[https://raw.githubusercontent.com/biogen-team/assets/main/logo-biogen.png](https://github.com/alerodriguesm02/Projeto-Biogen-2025/blob/main/Projeto-BioGen-main/public/assets/logo-biogen.png)" alt="BioGen Logo" width="200"/>
   
   [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)](https://github.com/biogen-team/projeto-biogen)
   [![Node.js](https://img.shields.io/badge/Node.js-18.0%2B-green)](https://nodejs.org/)
