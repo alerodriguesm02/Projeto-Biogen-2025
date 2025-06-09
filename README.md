@@ -54,19 +54,19 @@ graph LR
   <table>
     <tr>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/biogen-team/assets/main/ods-7.png" width="80"/>
+        <img src="https://github.com/alerodriguesm02/Projeto-Biogen-2025/blob/main/Projeto-BioGen-main/public/assets/ods%207.png" width="80"/>
         <br><strong>ODS 7</strong><br>Energia Limpa<br>e Acessível
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/biogen-team/assets/main/ods-10.png" width="80"/>
+        <img src="https://github.com/alerodriguesm02/Projeto-Biogen-2025/blob/main/Projeto-BioGen-main/public/assets/ods%2010.png" width="80"/>
         <br><strong>ODS 10</strong><br>Redução das<br>Desigualdades
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/biogen-team/assets/main/ods-12.png" width="80"/>
+        <img src="https://github.com/alerodriguesm02/Projeto-Biogen-2025/blob/main/Projeto-BioGen-main/public/assets/ods%2012.png" width="80"/>
         <br><strong>ODS 12</strong><br>Consumo e Produção<br>Responsáveis
       </td>
       <td align="center">
-        <img src="https://raw.githubusercontent.com/biogen-team/assets/main/ods-13.png" width="80"/>
+        <img src="https://github.com/alerodriguesm02/Projeto-Biogen-2025/blob/main/Projeto-BioGen-main/public/assets/ods%2013.png" width="80"/>
         <br><strong>ODS 13</strong><br>Ação contra a<br>Mudança do Clima
       </td>
     </tr>
